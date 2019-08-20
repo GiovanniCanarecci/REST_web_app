@@ -1,0 +1,29 @@
+<doctype html>
+<html lang="en">
+<head>
+    <title>New Message - Messages Database</title>
+    <!--  <link rel="stylesheet" href="./static/style.css"/>  -->
+</head>
+
+<body>
+    <div style="text-align:center;">
+    <title>New Message - Messages Database</title>
+    <h2>New Message</h2>                     
+    
+    <!--  to display the form:   -->
+    {% from "_formhelpers.html" import render_field %}
+        <form method=post>
+        <dl>
+            {{ render_field(form.title) }}
+            {{ render_field(form.content) }}
+            {{ render_field(form.sender) }}
+            {{ render_field(form.url) }}
+        </dl>
+        <p><input type=submit value=Submit>
+        </form>
+        <p>
+        <!--  to leave without submitting:   -->
+        <a href="{{url_for('index')}}"><button>Back to mainpage</button></a> 
+    </div>
+</body>
+</html>

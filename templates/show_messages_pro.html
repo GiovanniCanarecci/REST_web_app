@@ -1,0 +1,26 @@
+<doctype html>
+<html lang="en">
+
+<head>
+    <title>Saved Messages (advanced) - Messages Database</title>
+    <!--  <link rel="stylesheet" href="./static/style.css"/>  -->
+</head>
+
+<body>
+    <div style="text-align:center;">
+    <h2>Saved Messages (advanced)</h2>   
+        
+    <!--  to show the table of messages:   -->
+    {{ table }}
+    
+    <p>
+    <a href="/download_json">Download as JSON</a> 
+    or
+    <a href="/download_xml">Download as XML</a> 
+    <p>
+    <a href="{{url_for('show_messages')}}"><button>Show basic data</button></a> 
+    <p>
+    <a href="{{url_for('index')}}"><button>Back to mainpage</button></a>         
+    </div>
+</body>
+</html>

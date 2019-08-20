@@ -1,0 +1,31 @@
+<doctype html>
+<html lang="en">
+<head>
+    <title>Messages Database</title>
+    <!--  <link rel="stylesheet" href="./static/style.css"/>  -->
+</head>
+
+<body>
+    <div style="text-align:center;">
+    <h1>Messages Database</h1>
+    <h2>Welcome!</h2>
+    <p>
+    <!--  to leave a message:   -->
+    <a href="{{url_for('.new_message')}}"><button>createMessage</button></a>
+    or
+    <!--  to see all the messages written today:   -->
+    <a href="{{url_for('.show_messages')}}"><button>listMessages</button></a>
+    </p>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
